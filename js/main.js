@@ -21,6 +21,7 @@ const mostrarListaOrdenada = () => {
   comprarProductos(listaOrdenada);
 };
 
+/*solicita producto a comprar, verifica si existe en el catalogo*/
 const comprarProductos = (listaDeProductos) => {
   let otroProducto = false;
   let productoId = "";
@@ -40,10 +41,9 @@ const comprarProductos = (listaDeProductos) => {
 
     otroProducto = confirm("¿Desea agregar otro producto al carrito?");
   } while (otroProducto);
-
-  console.log(carritoUsuario);
 };
- 
+
+/*agrega producto al carrito y verifica si esta repetido*/
 const agregarAlCarrito = (producto, productoId, productoCantidad) => {
   const productoRepetido = carritoUsuario.find((producto) => producto.id.toLowerCase() === productoId.toLowerCase());
   if (productoRepetido) {
